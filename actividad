@@ -1,5 +1,40 @@
-Leer B
-   Leer H
-   S = (1/2) * B * H
-   Mostrar S
-Fin
+import java.util.Scanner;
+
+public class SuperficieTriangulo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            System.out.println("=== CÁLCULO DE SUPERFICIE DE TRIÁNGULO ===");
+            System.out.println("Fórmula: S = (base × altura) / 2\n");
+            
+            // Solicitar base
+            System.out.print("Ingrese la base del triángulo: ");
+            double base = scanner.nextDouble();
+            
+            // Solicitar altura
+            System.out.print("Ingrese la altura del triángulo: ");
+            double altura = scanner.nextDouble();
+            
+            // Validar que los valores sean positivos
+            if (base <= 0 || altura <= 0) {
+                System.out.println("Error: La base y la altura deben ser números positivos.");
+                return;
+            }
+            
+            // Calcular superficie
+            double superficie = (base * altura) / 2;
+            
+            // Mostrar resultado
+            System.out.println("\n=== RESULTADO ===");
+            System.out.println("Base: " + base);
+            System.out.println("Altura: " + altura);
+            System.out.println("Superficie: " + superficie);
+            
+        } catch (Exception e) {
+            System.out.println("Error: Por favor ingrese números válidos.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
