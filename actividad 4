@@ -1,0 +1,25 @@
+public class EvaluarExpresion {
+    public static void main(String[] args) {
+        // Declarar las variables
+        int A = 2;
+        int b = 5;
+        
+        // Calcular la expresión: 3*A - 4*b / A^2
+        // NOTA: En Java, ^ no es exponente, es XOR. Usamos Math.pow()
+        double resultado = 3 * A - (4.0 * b) / Math.pow(A, 2);
+        
+        // Mostrar el resultado
+        System.out.println("Para A = " + A + " y b = " + b);
+        System.out.println("La expresión 3*A - 4*b / A^2 es:");
+        System.out.println("3*" + A + " - 4*" + b + "/" + A + "^2 = " + resultado);
+        
+        // También podemos mostrar el paso a paso
+        double primerTermino = 3 * A;
+        double segundoTermino = (4.0 * b) / Math.pow(A, 2);
+        
+        System.out.println("\nDesglose:");
+        System.out.println("Primer término (3*A) = " + primerTermino);
+        System.out.println("Segundo término (4*b / A^2) = " + segundoTermino);
+        System.out.println("Resultado final: " + primerTermino + " - " + segundoTermino + " = " + resultado);
+    }
+}
