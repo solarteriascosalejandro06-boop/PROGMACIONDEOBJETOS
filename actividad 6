@@ -1,0 +1,113 @@
+/**
+ * Programa que convierte expresiones algebraicas a expresiones algorítmicas en Java
+ * @author TuNombre
+ * @version 1.0
+ */
+public class ExpresionesAlgoritmicas {
+
+    public static void main(String[] args) {
+        System.out.println("=== CONVERSIÓN DE EXPRESIONES ALGEBRAICAS A EXPRESIONES ALGORÍTMICAS ===\n");
+        
+        // a) √(b² - 4ac)
+        System.out.println("a) √(b² - 4ac) → Math.sqrt(Math.pow(b, 2) - 4 * a * c)");
+        
+        // b) (x² + y²) / z²
+        System.out.println("b) (x² + y²) / z² → (Math.pow(x, 2) + Math.pow(y, 2)) / Math.pow(z, 2)");
+        
+        // c) (3x + 2y) / 2z
+        System.out.println("c) (3x + 2y) / 2z → (3 * x + 2 * y) / (2 * z)");
+        
+        // d) (a + b) / (c - d)
+        System.out.println("d) (a + b) / (c - d) → (a + b) / (c - d)");
+        
+        // e) 4x² - 2x + 7
+        System.out.println("e) 4x² - 2x + 7 → 4 * Math.pow(x, 2) - 2 * x + 7");
+        
+        // f) (x + y)/x - 3x/5
+        System.out.println("f) (x + y)/x - 3x/5 → (x + y) / x - (3 * x) / 5");
+        
+        // g) a/(bc)
+        System.out.println("g) a/(bc) → a / (b * c)");
+        
+        // h) xyz
+        System.out.println("h) xyz → x * y * z");
+        
+        // i) (y₁ - y₂)/(x₂ - x₁)
+        System.out.println("i) (y₁ - y₂)/(x₂ - x₁) → (y1 - y2) / (x2 - x1)");
+        
+        // j) 2πr
+        System.out.println("j) 2πr → 2 * Math.PI * r");
+        
+        // k) 4/3 πr³
+        System.out.println("k) 4/3 πr³ → (4.0 / 3.0) * Math.PI * Math.pow(r, 3)");
+        
+        // l) (x₂ - x₁)² + (y₂ - y₁)²
+        System.out.println("l) (x₂ - x₁)² + (y₂ - y₁)² → Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)");
+        
+        System.out.println("\n=== EJEMPLOS CON VALORES NUMÉRICOS ===\n");
+        ejemplosConValores();
+    }
+    
+    /**
+     * Método que muestra ejemplos con valores numéricos
+     */
+    public static void ejemplosConValores() {
+        // Asignamos valores de ejemplo
+        double a = 2, b = 5, c = 3;
+        double x = 4, y = 2, z = 3;
+        double x1 = 1, x2 = 4, y1 = 2, y2 = 6;
+        double r = 5;
+        
+        System.out.println("Valores utilizados:");
+        System.out.println("a = 2, b = 5, c = 3, x = 4, y = 2, z = 3");
+        System.out.println("x1 = 1, x2 = 4, y1 = 2, y2 = 6, r = 5\n");
+        
+        // a) √(b² - 4ac)
+        double resultadoA = Math.sqrt(Math.pow(b, 2) - 4 * a * c);
+        System.out.println("a) √(b² - 4ac) = " + resultadoA);
+        
+        // b) (x² + y²) / z²
+        double resultadoB = (Math.pow(x, 2) + Math.pow(y, 2)) / Math.pow(z, 2);
+        System.out.println("b) (x² + y²) / z² = " + resultadoB);
+        
+        // c) (3x + 2y) / 2z
+        double resultadoC = (3 * x + 2 * y) / (2 * z);
+        System.out.println("c) (3x + 2y) / 2z = " + resultadoC);
+        
+        // d) (a + b) / (c - d)
+        double resultadoD = (a + b) / (c - 1); // Usamos d = 1 como ejemplo
+        System.out.println("d) (a + b) / (c - d) con d=1 = " + resultadoD);
+        
+        // e) 4x² - 2x + 7
+        double resultadoE = 4 * Math.pow(x, 2) - 2 * x + 7;
+        System.out.println("e) 4x² - 2x + 7 = " + resultadoE);
+        
+        // f) (x + y)/x - 3x/5
+        double resultadoF = (x + y) / x - (3 * x) / 5;
+        System.out.println("f) (x + y)/x - 3x/5 = " + resultadoF);
+        
+        // g) a/(bc)
+        double resultadoG = a / (b * c);
+        System.out.println("g) a/(bc) = " + resultadoG);
+        
+        // h) xyz
+        double resultadoH = x * y * z;
+        System.out.println("h) xyz = " + resultadoH);
+        
+        // i) (y₁ - y₂)/(x₂ - x₁)
+        double resultadoI = (y1 - y2) / (x2 - x1);
+        System.out.println("i) (y₁ - y₂)/(x₂ - x₁) = " + resultadoI);
+        
+        // j) 2πr
+        double resultadoJ = 2 * Math.PI * r;
+        System.out.println("j) 2πr = " + resultadoJ);
+        
+        // k) 4/3 πr³
+        double resultadoK = (4.0 / 3.0) * Math.PI * Math.pow(r, 3);
+        System.out.println("k) 4/3 πr³ = " + resultadoK);
+        
+        // l) (x₂ - x₁)² + (y₂ - y₁)²
+        double resultadoL = Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2);
+        System.out.println("l) (x₂ - x₁)² + (y₂ - y₁)² = " + resultadoL);
+    }
+}
