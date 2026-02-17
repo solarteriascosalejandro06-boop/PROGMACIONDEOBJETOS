@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class CalculadoraCirculo {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        try {
+            System.out.print("Ingresa el radio del círculo: ");
+            double radio = scanner.nextDouble();
+            
+            if (radio < 0) {
+                System.out.println("❌ El radio no puede ser negativo");
+            } else {
+                double longitud = calcularLongitud(radio);
+                double area = calcularArea(radio);
+                
+                System.out.println("\n📐 RESULTADOS:");
+                System.out.printf("📏 Longitud de la circunferencia: %.2f%n", longitud);
+                System.out.printf("🔵 Área del círculo: %.2f%n", area);
+                
+                // Mostrar fórmulas
+                System.out.println("\n--- Fórmulas utilizadas ---");
+                System.out.printf("Longitud = 2πr = 2 × %.4f × %.2f = %.2f%n", Math.PI, radio, longitud);
+                System.out.printf("Área = πr² = %.4f × %.2f² = %.2f%n", Math.PI, radio, area);
+            }
+            
+        } catch (Exception e) {
+            System.out.println("❌ Error: Ingresa un número válido");
+        } finally {
+            scanner.close();
+        }
+    }
+    
+    public static double calcularLongitud(double radio) {
+        return 2 * Math.PI * radio;
+    }
+    
+    public static double calcularArea(double radio) {
+        return Math.PI * Math.pow(radio, 2);
+    }
+}
