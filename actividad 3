@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class CalculadoraSalarioSemanal {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=== CALCULADORA DE SALARIO SEMANAL ===");
+        System.out.println();
+        
+        // Solicitar tarifa horaria
+        System.out.print("Ingrese la tarifa por hora (€): ");
+        double tarifaHoraria = scanner.nextDouble();
+        
+        // Array para almacenar las horas de cada día
+        double[] horasDiarias = new double[7];
+        String[] diasSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        
+        // Solicitar horas trabajadas cada día
+        System.out.println("\nIngrese las horas trabajadas cada día:");
+        for (int i = 0; i < 7; i++) {
+            System.out.print(diasSemana[i] + ": ");
+            horasDiarias[i] = scanner.nextDouble();
+        }
+        
+        // Calcular total de horas semanales
+        double totalHoras = calcularTotalHoras(horasDiarias);
+        
+        // Calcular salario semanal
+        double salarioSemanal = calcularSalarioSemanal(totalHoras, tarifaHoraria);
+        
+        // Mostrar resultados
+        mostrarResultados(horasDiarias, diasSemana, tarifaHoraria, totalHoras, salarioSemanal);
+        
+        scanner.close();
+    }
+    
+    /**
+     * Calcula el total de horas trabajadas en la semana
+     */
+    public static double calcularTotalHoras(double[] horasDiarias) {
+        double total = 0;
+        for (double horas : horasDiarias) {
+            total += horas;
+        }
+        return total;
+    }
+    
+    /**
+     * Calcula el salario semanal
+     */
+    public static double calcularSalarioSemanal(double totalHoras, double tarifaHoraria) {
+        return totalHoras * tarifaHoraria;
+    }
+    
+    /**
+     * Muestra los resultados del cálculo
+     */
+    public static void mostrarResultados(double[] horasDiarias, String[] diasSemana, 
+                                        double tarifaHoraria, double totalHoras, 
+                                        double salarioSemanal) {
+        System.out.println("\n=== RESUMEN SEMANAL ===");
+        System.out.println("\nHoras trabajadas por día:");
+        
+        for (int i = 0; i < 7; i++) {
+            System.out.printf("%-10s: %.2f horas%n", diasSemana[i], horasDiarias[i]);
+        }
+        
+        System.out.println("\n--- RESULTADOS FINALES ---");
+        System.out.printf("Tarifa por hora: €%.2f%n", tarifaHoraria);
+        System.out.printf("Total horas semanales: %.2f horas%n", totalHoras);
+        System.out.printf("SALARIO SEMANAL: €%.2f%n", salarioSemanal);
+    }
+}
